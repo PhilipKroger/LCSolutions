@@ -1,21 +1,8 @@
-s = "babad"
-ans = ''
-for i in range(1, len(s) - 1):
-    l, r = i, i
-    while l <= r:
-        if s[l] != s[r]:
-            break
-        if r - l + 1 > len(ans):
-            ans = s[l:r + 1]
-        l -= 1
-        r += 1
+arr = [1, 4, 2, 5, 3]
 
-    l, r = i, i + 1
-    while l <= r:
-        if s[l] != s[r]:
-            break
-        if r - l + 1 > len(ans):
-            ans = s[l:r + 1]
-        l -= 1
-        r += 1
-print(ans)
+sm = 0
+for i in range(len(arr)):
+    for j in range(len(arr)):
+        if len(arr[i:j+1])%2!=0:
+            sm += sum(arr[i:j+1])
+print(sm)
